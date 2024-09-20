@@ -147,7 +147,8 @@ app.get('/productos/:id', async (req, res) => {
     }
 });
 
-const port = 3000;
+// const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Escuchando en el puerto ${port}`);
 });
