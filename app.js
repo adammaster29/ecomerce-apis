@@ -19,7 +19,7 @@ const swaggerOptions = {
       },
       servers: [
         {
-          url: 'http://localhost:3000', // URL en producción o local
+          url: 'https://ecomerce-apis.onrender.com', // URL en producción o local
         },
       ],
     },
@@ -89,7 +89,6 @@ app.use('/images', express.static('public/img'));
 app.get('/productos', async (req, res) => {
     try {
         const pool = await sql.connect(config);
-        console.log('conexion exitosa');
         const result = await pool.request().query('SELECT * FROM productos');
         res.json(result.recordset);
     } catch (error) {
